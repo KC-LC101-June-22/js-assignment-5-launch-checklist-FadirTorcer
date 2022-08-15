@@ -17,7 +17,13 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
+    if (testInput === "") {
+        return "Empty";
+    } else if (typeof(testInput) === "string") {
+        return "String";
+    } else if (typeof(testInput) === "number") {
+        return "Not a string";
+    }
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
