@@ -1,5 +1,7 @@
 // Write your JavaScript code here!
 
+const { formSubmission } = require("./scriptHelper");
+
 window.addEventListener("load", function() {
 
     let form = document.querySelector("form");
@@ -14,16 +16,17 @@ window.addEventListener("load", function() {
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
-        console.log(pilotName.value);
-        console.log(copilotName.value);
-        console.log(fuelLevel.value);
-        console.log(cargoMass.value);
+        pilotNameValue = pilotName.value;
+        copilotNameValue = copilotName.value;
+        fuelLevelValue = fuelLevel.value;
+        cargoMassValue = cargoMass.value;
 
         if (usernameInput.value === "" || teamName.value === "") {
-            alert("All fields are required!");
+            alert("Make sure to enter valid invormaiton for each field!");
             // stop the form submission
             event.preventDefault();
         } 
+
     });
 
    let listedPlanets;
@@ -36,6 +39,8 @@ window.addEventListener("load", function() {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
        
-   })
+   });
+
+   formSubmission(form, listedPlanets, pilotNameValue, copilotNameValue, fuelLevelValue, cargoMassValue);
    
 });
