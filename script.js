@@ -19,20 +19,20 @@ window.addEventListener("load", function() {
         event.preventDefault();
 
         let list = document.getElementById("faultyItems");
-        let pilotName = document.querySelector("input[name=pilotName]");
-        let copilotName = document.querySelector("input[name=copilotName]");
-        let fuelLevel = document.querySelector("input[name=fuelLevel]");
-        let cargoMass = document.querySelector("input[name=cargoMass]");
+        let inputPilot = document.querySelector("input[name=pilotName]");
+        let inputCopilot = document.querySelector("input[name=copilotName]");
+        let inputFuel = document.querySelector("input[name=fuelLevel]");
+        let inputCargo = document.querySelector("input[name=cargoMass]");
 
-        pilotNameValue = pilotName.value;
-        copilotNameValue = copilotName.value;
-        fuelLevelValue = fuelLevel.value;
-        cargoMassValue = cargoMass.value;
+        pilotName = inputPilot.value;
+        copilotName = inputCopilot.value;
+        fuelLevel = inputFuel.value;
+        cargoMass = inputCargo.value;
 
-        if (validateInput(pilotNameValue) === "Empty" || validateInput(copilotNameValue) === "Empty") {
+        if (validateInput(pilotName) === "Empty" || validateInput(copilotName) === "Empty") {
             alert("Make sure to enter valid informaiton for each field!");
         } 
-        formSubmission(document, list, pilotNameValue, copilotNameValue, fuelLevelValue, cargoMassValue);
+        formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
     });
    
 });
