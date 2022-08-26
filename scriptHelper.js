@@ -27,7 +27,6 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {   
-   let checkList = document.getElementById("faultyItems");
    let gasTank = document.getElementById("fuelStatus");
    let manifest = document.getElementById("cargoStatus");
    let firstPilot = document.getElementById("pilotStatus");
@@ -38,17 +37,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    secondPilot.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
    if (fuelLevel < 10000) {
-    checkList.style.visibility = "visible";
+    list.style.visibility = "visible";
     gasTank.innerHTML = "Fuel level too low for launch";
     launchReadiness.innerHTML = "Shuttle Not Ready for Launch";
     launchReadiness.style.color = "rgb(199, 37, 78)";
    } else if (cargoLevel > 10000) {
-    checkList.style.visibility = "visible";
+    list.style.visibility = "visible";
     manifest.innerHTML = "Cargo mass too heavy for launch";
     launchReadiness.innerHTML = "Shuttle Not Ready for Launch";
     launchReadiness.style.color = "rgb(199, 37, 78)";
    } else {
-    checkList.style.visibility = "visible";
+    list.style.visibility = "visible";
     launchReadiness.innerHTML = "Shuttle is Ready for Launch";
     launchReadiness.style.color = "rgb(65, 159, 106)";
    }
