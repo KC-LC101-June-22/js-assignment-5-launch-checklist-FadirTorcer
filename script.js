@@ -2,17 +2,18 @@
 
 window.addEventListener("load", function() {
 
-    // let listedPlanets;
-    // // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    // let listedPlanetsResponse;
-    // listedPlanetsResponse.then(function (result) {
-    //     listedPlanets = result;
-    //     console.log(listedPlanets);
-    // }).then(function () {
-    //     console.log(listedPlanets);
-    //     // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-        
-    // });
+/*     let listedPlanets;
+    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanetsResponse;
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+        console.log(listedPlanets);
+    }).then(function () {
+        console.log(listedPlanets);
+        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+        let target = pickPlanet(listedPlanets);
+        addDestinationInfo(document, target.name, target.diameter, target.star, target.distance, target.moons, target.imageUrl);
+    }); */
     
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
@@ -29,9 +30,13 @@ window.addEventListener("load", function() {
         fuelLevel = inputFuel.value;
         cargoMass = inputCargo.value;
 
-        if (validateInput(pilotName) === "Empty" || validateInput(copilotName) === "Empty") {
-            alert("Make sure to enter valid informaiton for each field!");
-        } 
+        if (validateInput(pilotName) === "Empty" || validateInput(copilotName) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
+            alert("Make sure to enter a value for each field!");
+        } else if (validateInput(pilotName) !== "Not a Number" || validateInput(copilotName) !== "Not a Number"){
+            alert("Pilot names must be strings!")
+        } else if (validateInput(fuelLevel) !== "Number" || validateInput(cargoMass) !== "Number") {
+            alert("Fuel levels and cargo masses must be numbers!")
+        }
         formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
     });
    
