@@ -27,7 +27,15 @@ function validateInput(testInput) {
     }
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {   
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
+        alert("Make sure to enter a value for each field!");
+    } else if (validateInput(pilot) !== "Not a Number" || validateInput(copilot) !== "Not a Number") {
+        alert("Pilot names must be strings!")
+    } else if (validateInput(fuelLevel) !== "Is a Number" || validateInput(cargoLevel) !== "Is a Number") {
+        alert("Fuel levels and cargo masses must be numbers!")
+    }
+    
    let gasTank = document.getElementById("fuelStatus");
    let manifest = document.getElementById("cargoStatus");
    let firstPilot = document.getElementById("pilotStatus");
