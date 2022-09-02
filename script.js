@@ -32,9 +32,9 @@ window.addEventListener("load", function() {
 
         if (validateInput(pilotName) === "Empty" || validateInput(copilotName) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
             alert("Make sure to enter a value for each field!");
-        } else if (validateInput(pilotName) !== "Not a Number" || validateInput(copilotName) !== "Not a Number"){
+        } else if (validateInput(pilotName) !== "Not a Number" || validateInput(copilotName) !== "Not a Number") {
             alert("Pilot names must be strings!")
-        } else if (validateInput(fuelLevel) !== "Number" || validateInput(cargoMass) !== "Number") {
+        } else if (validateInput(fuelLevel) !== "Is a Number" || validateInput(cargoMass) !== "Is a Number") {
             alert("Fuel levels and cargo masses must be numbers!")
         }
         formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
