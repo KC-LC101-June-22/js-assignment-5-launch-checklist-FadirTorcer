@@ -13,7 +13,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth: ${distance}</li>
                     <li>Number of Moons: ${moons}</li>
                 </ol>
-                <img src=${imageUrl}>`;
+                <img src="${imageUrl}">`;
   
 }
 
@@ -55,15 +55,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
 }
 
-/* async function myFetch() {
+async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/weather.json").then( function(response) {
-        //planetsReturned = pickPlanet ?
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+        return response.json();
     });
 
     return planetsReturned;
-} */
+}
 
 function pickPlanet(planets) {
     let index = Math.floor(Math.random()*planets.length);
